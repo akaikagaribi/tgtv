@@ -64,9 +64,6 @@
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let iframe = document.getElementById('iframe');
-        iframe.removeAttribute('sandbox');
-        iframe.setAttribute('src', iframe.src);
         // Init TWA
         Telegram.WebApp.ready();
 
@@ -126,7 +123,9 @@
         Telegram.WebApp.onEvent('themeChanged', function() {
             document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
         });
-
+        let iframe = document.getElementById('iframe');
+        iframe.removeAttribute('sandbox');
+        iframe.setAttribute('src', iframe.src);
     </script>
 </body>
 </html>
