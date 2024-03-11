@@ -74,7 +74,7 @@
         <h1>Израиль</h1>
         <ul>
             <li>
-                <a href="javascript:window.location = '/tgtv/watch.html';">Sport 1</a>
+                <a href="javascript:window.location = 'https://daddylive.ru/mylivetv/stream-140.php';">Sport 1</a>
             </li>
             <li>
                 <a href="javascript:Telegram.WebApp.openLink('https://daddylive.ru/mylivetv/stream-141.php', {try_instant_view:true});">Sport 2</a>
@@ -118,6 +118,13 @@
             Telegram.WebApp.showAlert('Main Button was clicked')
         });	
         Telegram.WebApp.MainButton.show();
+
+        // Show main button
+        Telegram.WebApp.BackButton.setParams({});
+        Telegram.WebApp.BackButton.onClick(function () {
+            window.location = '/tgtv';
+        });	
+        Telegram.WebApp.BackButton.show();
 
         // Function to call showPopup API
         function showPopup() {
