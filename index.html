@@ -179,12 +179,12 @@
         });
 
         // Tg client vs browser detection
-        let tgUser = (sessionStorage.getItem('__telegram__initParams') == {});
+        let tgUser = !(sessionStorage.getItem('__telegram__initParams') == {});
         let info = document.getElementById('info');
         if (tgUser) {
-            info.innerHTML = 'Вы зашли из браузера';
-        } else {
             info.innerHTML = 'Вы зашли из телеграма';
+        } else {
+            info.innerHTML = 'Вы зашли из браузера';
         };
     </script>
 
