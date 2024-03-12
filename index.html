@@ -65,15 +65,30 @@
             width: 265px;
             height: 265px;
         }
+        .flex-container {
+            background-color: var(--tg-theme-bg-color);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .flex-container > div {
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
     </style>
 </head>
 
 <body>
     <main>
         <h1>Израиль</h1>
+        <div class="flex-container">
+            <div id="channelButton" onclick="Telegram.WebApp.openLink('/tgtv/watch?c=0');">ספורט 1</div>
+        </div>
         <ul>
             <li>
-                <button id="channelButton" onclick="Telegram.WebApp.openLink('/tgtv/watch?c=0');">ספורט 1</button>
                 <a href="javascript:Telegram.WebApp.openLink('/tgtv/watch?c=0');">ספורט 1</a>
             </li>
             <li>
