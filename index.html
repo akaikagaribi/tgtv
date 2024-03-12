@@ -179,7 +179,7 @@
         });
 
         // Tg client vs browser detection
-        const tgUser = false;
+        let tgUser;
         const tgData = sessionStorage.getItem('__telegram__initParams');
         if (tgData == {}) {
             tgUser = false;
