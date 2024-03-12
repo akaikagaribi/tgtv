@@ -179,7 +179,7 @@
         });
 
         function getChannel(n) {
-            return tgUser : Telegram.WebApp.openLink(`/tgtv/watch?c=${n}`) ? document.location = `/tgtv/watch?c=${n}`;
+            return tgUser ? Telegram.WebApp.openLink(`/tgtv/watch?c=${n}`) : document.location = `/tgtv/watch?c=${n}`;
         };
 
         // Tg client vs browser detection
