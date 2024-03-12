@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Telegram Mini Apps Vanilla JS Sample App</title>
+    <title id="title">Channel Name</title>
     <style>
         body {
             --bg-color: var(--tg-theme-bg-color);
@@ -60,8 +60,7 @@
 
 <body>
     <main>
-        <embed type="text/html" src="https://olalivehdplay.ru/premiumtv/daddylive.php?id=140"/>
-        <iframe src="https://daddylive.ru/mylivetv/stream-140.php"/>
+        <embed type="text/html" src/>
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -130,5 +129,22 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
+    <script>
+        function getQueryVariable(variable) {
+        let queryString = window.location.search.substring(1);
+        let queries = queryString.split('&');
+        for (let query of queries) {
+            let pair = query.split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+            return 'Null';
+        }
+        let title = document.getElementById('title');
+        title.innerHTML = getQueryVariable('c');
+        let iframe = document.getElementById('iframe');
+        iframe.setAttribute('src', getQueryVariable('l');
+    </script>
 </body>
 </html>
