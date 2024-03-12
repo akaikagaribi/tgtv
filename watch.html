@@ -135,6 +135,7 @@
             return 'Null';
         }
         let title = document.getElementById('title');
+        console.log(title);
         title.innerHTML = getQueryVariable('c');
         let iframe = document.getElementById('iframe');
         iframe.setAttribute('src', getQueryVariable('l'));
