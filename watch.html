@@ -123,13 +123,6 @@
         Telegram.WebApp.onEvent('themeChanged', function() {
             document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
         });
-        let iframe = document.getElementById('iframe');
-        iframe.removeAttribute('sandbox');
-        iframe.setAttribute('src', iframe.src);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
-    <script>
         function getQueryVariable(variable) {
         let queryString = window.location.search.substring(1);
         let queries = queryString.split('&');
@@ -144,7 +137,9 @@
         let title = document.getElementById('title');
         title.innerHTML = getQueryVariable('c');
         let iframe = document.getElementById('iframe');
-        iframe.setAttribute('src', getQueryVariable('l');
+        iframe.setAttribute('src', getQueryVariable('l'));
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
 </body>
 </html>
