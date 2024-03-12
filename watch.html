@@ -60,8 +60,7 @@
 
 <body>
     <main>
-        <iframe id="iframe" src style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-        <iframe id="iframe" src="https://hd.kinopoisk.ru/channels?openedChannelId=49d78328c2da6e63b7f3a16c8626862c" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+        <iframe id="iframe" src style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay;" allowtransparency="true"></iframe>
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -123,6 +122,20 @@
         Telegram.WebApp.onEvent('themeChanged', function() {
             document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
         });
+        const channels = [
+            ['ספורט 1', 'https://daddylive.ru/mylivetv/stream-140.php'],
+            ['ספורט 2', 'https://daddylive.ru/mylivetv/stream-141.php'],
+            ['ספורט 3', 'https://daddylive.ru/mylivetv/stream-142.php'],
+            ['ספורט 4', 'https://daddylive.ru/mylivetv/stream-143.php'],
+            ['ספורט 5', 'https://daddylive.ru/mylivetv/stream-146.php'],
+            ['ספורט 5 Gold', 'https://daddylive.ru/mylivetv/stream-148.php'],
+            ['Матч ТВ', 'https://antenasport.ru/match.php'],
+            ['Матч Премьер', 'https://antenasport.ru/matchpremier.php'],
+            ['Матч Футбол 1', 'https://antenasport.ru/match1.php'],
+            ['Матч Футбол 2', 'https://antenasport.ru/match2.php'],
+            ['Матч Футбол 3', 'https://antenasport.ru/match3.php'],
+            ['Error', 'https://example.com']
+        ];
         function getQueryVariable(variable) {
         let queryString = window.location.search.substring(1);
         let queries = queryString.split('&');
@@ -132,13 +145,13 @@
                 return decodeURIComponent(pair[1]);
             }
         }
-            return 'Null';
+            return -1;
         }
         let title = document.getElementById('title');
-        console.log(title);
-        title.innerHTML = getQueryVariable('c');
         let iframe = document.getElementById('iframe');
-        iframe.setAttribute('src', getQueryVariable('l'));
+        let channel = channels[getQueryVariable('c')];
+        title.innerHTML = channel[0];
+        iframe.setAttribute('src', channel[1]);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
