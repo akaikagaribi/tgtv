@@ -151,7 +151,7 @@
         let iframe = document.getElementById('iframe');
         let channelId = getQueryVariable('c');
         if (channelId == undefined) {
-            channelId = -1;
+            channelId = channels.length - 1;
         };
         let channel = channels[channelId];
         title.innerHTML = channel[0];
