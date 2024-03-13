@@ -145,14 +145,11 @@
                 return decodeURIComponent(pair[1]);
             }
         }
-            return -1;
+            return channels.length - 1;
         }
         let title = document.getElementById('title');
         let iframe = document.getElementById('iframe');
         let channelId = getQueryVariable('c');
-        if (channelId == undefined) {
-            channelId = channels.length - 1;
-        };
         let channel = channels[channelId];
         title.innerHTML = channel[0];
         iframe.setAttribute('src', channel[1]);
